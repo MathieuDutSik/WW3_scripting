@@ -1,0 +1,32 @@
+&PROC
+! ListNatureQuery = "average"
+! KindSelect = "monthly"
+ MODELNAME = "WW3",
+ BEGTC = "earliest",
+ ENDTC = "latest"
+ DELTC = 1,
+ UNITC = "MIN",
+! DELTC = 24,
+! UNITC = "HR",
+! DELTC = 10,
+! UNITC = "MIN",
+ GridFile  = "ww3.201008.nc"
+ HisPrefix = "ww3.201008.nc"
+ PicPrefix = "WW3_plot/"
+ Extension="png",
+ NPROC = 12
+/
+
+&PLOT
+ VariableRange = T
+ DoMain = T
+ PrintMMA = T
+/
+
+&VARS
+ZetaSetup = T
+ZetaOcean = T
+Hwave = T
+DynBathy = T
+TM02 = T
+/

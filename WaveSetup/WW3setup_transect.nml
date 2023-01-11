@@ -1,0 +1,33 @@
+&PROC
+ BEGTC = "earliest"
+ DELTC = 1
+ UNITC = "MIN"
+ ENDTC = "latest"
+ ListMODELNAME = "WW3"
+ ListGridFile = "ww3.201008.nc"
+ ListHisPrefix = "ww3.201008.nc"
+ ListRunName = "WW3"
+ PicPrefix = "WW3_transect/"
+ Extension = "png",
+/
+
+&PLOT
+ TransectLonStart = 0.036
+ TransectLonEnd   = 0.036
+
+ TransectLatStart = 0.0
+ TransectLatEnd   = 0.03600004
+ SpatialResolutionTransectKM = 0.0005
+ BoundSingle_var = "ZetaSetup"
+ BoundSingle_min = -0.05
+ BoundSingle_max = 0.10
+/
+
+
+&VARS
+ZetaSetup = T
+ZetaOcean = T
+Hwave = T
+DynBathy = T
+TM02 = T
+/
