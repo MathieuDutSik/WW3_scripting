@@ -8,7 +8,8 @@
  ListHisPrefix = "ww3.201008.nc"
  ListRunName = "WW3"
  PicPrefix = "WW3_transect/"
- Extension = "png",
+ Extension = "png"
+ PrintTextFiles = T
 /
 
 &PLOT
