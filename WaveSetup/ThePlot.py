@@ -62,7 +62,6 @@ alphaBreakingHS=0.81;
 DynBathy = RecDynBathy[1]
 n_ent = len(DynBathy)
 
-
 while(True):
     ListKexact = [GetKvectorExact(eOmega, eDep) for eDep in DynBathy]
     kD = [ListKexact[u] * DynBathy[u] for u in range(n_ent)]
@@ -89,7 +88,7 @@ while(True):
 
 
 DoPlot = True
-def Do_the_plot(List_WW3, List_Ideal, eName):
+def plot_pairs(List_WW3, List_Ideal, eName):
     plt.figure(figsize=(14,10))
     plt.plot(ListX, List_WW3, label="WW3", color = "C0")
     plt.plot(ListX, List_Ideal, label="Ideal", color = "C1")
@@ -103,8 +102,25 @@ def Do_the_plot(List_WW3, List_Ideal, eName):
     plt.savefig(FileSave)
     plt.close('all')
 
+def plot_single(ListVal, eName):
+    plt.figure(figsize=(14,10))
+    plt.plot(ListX, ListVal, label=eName, color = "C0")
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.ylabel(eName, fontsize=14)
+    plt.legend(fontsize=14)
+    plt.grid(True,alpha=0.3)
+    plt.tight_layout()
+    FileSave = eName + ".png"
+    plt.savefig(FileSave)
+    plt.close('all')
+
 if DoPlot:
-    Do_the_plot(ListWW3_Hwave, ListIdeal_Hwave, "Hwave")
-    Do_the_plot(ListWW3_ZetaSetup, ListIdeal_ZetaSetup, "ZetaSetup")
+    plot_pairs(ListWW3_Hwave, ListIdeal_Hwave, "Hwave")
+    plot_pairs(ListWW3_ZetaSetup, ListIdeal_ZetaSetup, "ZetaSetup")
+    plot_single(ListKexact, "Kexact")
+    plot_single(DynBathy, "DynBathy")
+    plot_single(cPhase, "cPhase")
+    plot_single(cGroup, "cGroup")
 
 
